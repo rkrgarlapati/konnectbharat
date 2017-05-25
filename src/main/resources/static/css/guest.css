@@ -1,0 +1,116 @@
+#rental_section,#sale_section,#matrimony_section,#custcontact_section{
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 2%;
+    margin-bottom: 0%;
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    border-radius: 10px;
+    background:rgba(238, 240, 249, 0.26)
+}
+
+#login_section {
+	width : 40%;
+	height: 300px;
+    margin-left: 30%;
+    margin-right: 40%;
+    margin-top: 10%;
+    margin-bottom: 20;
+    border: 1px solid rgba(0, 0, 0, 0.13);
+    border-radius: 15px;
+    background:rgba(238, 240, 249, 0.26)
+}
+
+
+.login1_button{
+	padding: 3px; 
+	margin: 0%;
+	width: 100%!important;
+}
+
+.section1_heading {
+    padding: 15px 0px 15px 0px;
+   background: rgba(0, 0, 0, 0.58);
+   color: white;
+   font-weight: 600;
+   font-size:20px;
+   margin-top: 0px;
+   border-top-left-radius: 15px;
+   border-top-right-radius: 15px;
+}
+
+
+.section1_button{
+	padding: 15px;
+	margin: 12%;
+	width: 75%!important;
+}
+
+#section2 {
+    padding: 10px;
+    width: 75%;
+    margin: 1% 10% 1% 10%;
+}
+
+.section2_button {
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.global_footer{
+	background-color: black;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+footer {
+      background-color: #000;
+      color: white;
+      padding: 15px;
+    }
+    
+    .nav-parent{
+    /* overflow: hidden; */
+    position: relative;
+    height: 100%;
+    
+    }
+    
+    .nav-child{
+    height: 100%;
+     position: absolute;
+    right: 0px;
+    top: 20px;
+    width: 100%
+    }
+    
+    
+    .accordion-heading{
+    padding: 7px;
+    background-color: #286090
+    }
+    .nav-header-primary{
+    color: #fff
+    }
+    .nav-list .nav>li>a{
+    padding: 10px 29px
+    }
+     .accordion-heading1{
+    padding: 7px;
+    }
+    
+    .nav-header-primary1{
+    color: #286090
+    }
+    
+    html,body{
+    height: 100%
+}
+table thead {
+	background-color: #44B3C2;color: #fff;
+}
+table thead tr th{
+	font-weight:lighter;
+}

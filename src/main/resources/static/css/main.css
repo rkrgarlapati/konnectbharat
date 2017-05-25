@@ -1,0 +1,364 @@
+
+#register_form,
+#rent_form,
+#sales_form,
+#matri_form,
+#con_contact_form {
+    border: 1px solid #337ab7;
+    background-color: rgba(238, 240, 249, 0.26);
+    opacity:0.9;
+    height: auto;
+    border-radius:15px;
+    margin: 0;
+    width: 100%;
+}
+
+.registerForm_head,
+.rentalForm_head,
+.saleForm_head,
+.matrimonyForm_head,.contact_form_head {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.17);
+    background: #286090;
+    color: white;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+label{
+	/*margin-left:10px;*/
+	margin-bottom:1px!important;
+}
+
+.mandatory {
+    margin: 0 10px 1px 5px;
+    color: red;
+    font-style: italic;
+}
+
+.optional {
+    font-weight: 600;
+    margin: 0 10px 1px 5px;
+    font-size: small;
+    font-style: italic;
+}
+
+.gropElements {
+    padding-top: 5px;
+	padding-bottom:10px;
+}
+.gropElements1 {
+    padding-bottom:2px;
+}
+
+.gropElements_rental{
+	padding-top: 3px;
+}
+
+.address_section,.property_section{
+	padding-bottom:10px;
+}
+
+.pArea_height{
+	height:65px;
+}
+
+.address_section_row{
+	margin-left:0;
+	margin-right:0;
+}
+.elementsBorder {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.39);
+}
+
+#first_name,#second_name,#emailid,
+#panNumber, #license, #aadharNumber, 
+#address1,#address2, #area, 
+#city, #state,#postal,#country,
+#rental_party,#sale_party,#agreement_type,
+#rental_address1,#rental_address2, #rental_area, 
+#rental_city, #rental_state,#rental_postal,#rental_country,
+#usage,#rental_advance,#advance_months,#r_rent_period,#rent_period,
+#sale_address1,#sale_address2,#sale_area,
+#sale_city,#sale_state,#sale_postal,
+#sale_country,#loan,#sale_referal,#matri_dob{
+    /*margin: 1px 10px 1px 10px;*/
+    padding: 5px;
+    width:100%;
+}
+
+#matri_party_name,#matri_address1,#matri_address2,
+#matri_area,#matri_city,#matri_state,#matri_postal,#matri_country,
+#matri_bride_name,#matri_caste,#matri_sub_caste,
+#matri_height,#matri_family_det,#matri_add_details{
+    padding: 5px;
+    width:100%;
+}
+
+#communicationId,#agreementId,#dateAndTime,
+#communicationclass,#communicationtype,#status,
+#priority,#comments
+{
+    padding: 5px;
+    width:100%;
+}
+
+
+
+.day,.month,.year{
+    padding: 5px;
+    width:32%;
+}
+
+
+#matri_agreement_type,#matri_higher_edu,
+#matri_religion,#matri_employment,#matri_marital_status,
+#matri_food,#matri_smoking,#drinking_status,#matri_horoscope_available
+{
+    padding: 7px;
+    width:100%;
+}
+
+
+
+#r_prop_area,#register_phone,#rental_phone,#s_prop_area,#sale_phone,#rental_rent,#sale_rent,#matri_phone{
+	margin: 0px;
+	border-radius:0;
+	width:100%
+}
+.pNumber,.propArea,.pRent,.pAdvance,.parkTwo,.parkFour,.pMaintenance{
+    border-radius: 0;
+}
+
+.input-group-pNumber,.input-group-propArea,
+.input-group-rent,.input-group-advance,
+.input-group-parkTwo,.input-group-parkFour,.input-group-maintenance{
+	position:relative;
+	/*margin:1px 4px 1px 4px;*/
+}
+
+input#phone, input#matri_phone{
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#submit_registerForm,#cancel_registerForm,
+#submit_rentalForm,#cancel_rentalForm,
+#submit_saleForm,#cancel_saleForm
+,#submit_matrimonyForm,#cancel_matrimonyForm ,#submit_contactForm,#cancel_contactForm{
+	 width: 41%;
+    margin: 2% 4% 1% 4%;
+}
+
+#cancel_registerForm,#cancel_rentalForm,#cancel_saleForm,#cancel_contactForm{
+ background :rgba(218, 215, 215, 0.31);
+}
+
+.error{
+	color: red;
+	margin-left: 10px;
+}
+
+.error_show{
+	color: red;
+	margin-left: 10px;
+}
+
+.global_footer{
+	background-color: black;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.invalid{
+	border-color: red!important;
+}
+
+.error{
+	color: red;
+	margin-left: 10px;
+}
+
+.span-error{
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif,Glyphicons Halflings;
+    font-size: 13px;
+}
+
+
+/* @media all and (min-width:768px){
+	.rental_form_class,
+	.sale_form_class,
+	.matrimony_form_class,
+	.register_form_class {
+		margin:1% 15% 1% 15%;
+	
+	}
+} */
+
+@media all and (min-width:768px){
+	.register_form_class {
+		margin:1% 15% 1% 15%;
+		
+	}
+}
+
+@media all and (min-width:768px){
+	.contactsearch_form_class,.refsearch_form_class {
+		margin:1% 15% 1% 0%;
+		
+	}
+}
+
+@media all and (min-width:600px) and (max-width:768px){
+	#register_form,
+	#rent_form,
+	#sales_form,
+	#matri_form,
+	#con_contact_form{
+		width:100%;
+	}
+	.register_form_class,
+	.rental_form_class,
+	.sale_form_class,
+	.matrimony_form_class,
+	.contact_form_class {
+		margin:1%;
+		padding:5%;
+	}
+}
+
+@media all and (max-width: 599px) and (min-width: 320px){
+	
+	.email-bottom{
+		margin-bottom:5px;
+	}
+	
+	#register_form,
+	#rent_form,
+	#sales_form,
+	#matri_form,
+	#con_contact_form{
+	width:100%;
+}
+	.register_form_class,
+	.rental_form_class,
+	.sale_form_class,
+	.matrimony_form_class,
+	.contact_form_class {
+		margin:1%;
+		padding:3% 5% 3% 5%;
+	}
+}
+
+.innerErrSpn {
+    float: right;
+    margin-right: 6px;
+    margin-top: -29px;
+    position: relative;
+    z-index: 2;
+    color: red;
+}
+.alert{
+	padding: 3px 3px 3px 6px;
+	margin-bottom:2px;
+}
+#myModal .modal-dialog  {width:25%;}
+
+.row .no-float {
+  display: table-cell;
+  float: none;
+}
+
+footer {
+      background-color: #000;
+      color: white;
+      padding: 15px;
+    }
+    
+    .nav-parent{
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    
+    }
+    
+    .nav-child{
+    height: 100%;
+     position: absolute;
+    right: 0px;
+    top: 10px;
+    width: 100%
+    }
+    
+    
+    .accordion-heading{
+    padding: 7px;
+    background-color: #286090
+    }
+    .nav-header-primary{
+    color: #fff
+    }
+    .nav-list .nav>li>a{
+    padding: 10px 29px
+    }
+     .accordion-heading1{
+    padding: 7px;
+    }
+    
+    .nav-header-primary1{
+    color: #286090
+    }
+    
+/* employee register */
+fieldset {
+	border: thin solid #ccc;
+	border-radius: 4px;
+	padding: 20px;
+	padding-left: 40px;
+	background: #fbfbfb;
+}
+
+legend {
+	color: #678;
+}
+
+label small {
+	color: #678 !important;
+}
+
+span.req {
+	color: maroon;
+	font-size: 112%;
+}
+
+
+.btn-emplogin {
+    color: #fff;
+	background-color: #44B3C2;
+	font-size: 14px
+}
+
+.btn-emplogin:hover,
+.btn-emplogin:focus {
+    color: #fff;
+}
+
+#emp_login_form h1 {
+    color: #44B3C2;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+.emppage_font{
+	color:#44B3C2;font-size: 20px
+}
+.modalclosebtn{
+	color:#0088cc;
+	font-size:32px;
+	opacity:1.2;
+	font-weight: 300
+	
+}
