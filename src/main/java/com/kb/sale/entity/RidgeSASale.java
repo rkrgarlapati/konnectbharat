@@ -18,6 +18,7 @@ public class RidgeSASale {
 	private Double amount;
 	private String referred_by;
 	private String addl_dtls;
+	private String prop_type;
 	
 	public String getSa_id() {
 		return sa_id;
@@ -60,5 +61,13 @@ public class RidgeSASale {
 	}
 	public void setAddl_dtls(String addl_dtls) {
 		this.addl_dtls = addl_dtls;
+	}
+
+	public String getProp_type() {
+		return prop_type;
+	}
+
+	public void setProp_type(String prop_type) {
+		this.prop_type = prop_type;
 	}
 }

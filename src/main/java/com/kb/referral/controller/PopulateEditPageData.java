@@ -107,10 +107,10 @@ public class PopulateEditPageData {
 		sale.setStart_dt(ridgeSA.getStart_dt());
 
 		sale.setUsage(saSale.getUsage());
+		sale.setProp_type(saSale.getProp_type());
 		sale.setS_prop_area(saSale.getProperty_area());
 		sale.setLoan(saSale.getLoan());
 		sale.setSale_amount(saSale.getAmount());
-		sale.setS_prop_area(saSale.getProperty_area());
 		sale.setAddl_dtls(saSale.getAddl_dtls());
 
 		return sale;

@@ -88,7 +88,7 @@
 							<form:label path="password">
 								<spring:message code="password" />
 							</form:label>
-							<form:password path="password" id="password" class="form-control" />
+							<form:password path="password" id="password" class="form-control" autocomplete="off"/>
 							<form:errors path="password" cssClass="error" />
 							<br />
 
@@ -98,7 +98,7 @@
 								<spring:message code="reenterPassword" />
 							</form:label>
 							<form:password path="reenterPassword" id="reenterPassword"
-								class="form-control" />
+								class="form-control" autocomplete="off"/>
 							<form:errors path="reenterPassword" cssClass="error" />
 							<br />
 						</div>

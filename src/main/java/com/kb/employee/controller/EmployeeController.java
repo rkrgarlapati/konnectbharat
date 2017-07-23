@@ -119,7 +119,7 @@ public class EmployeeController {
         // return new
         // ModelAndView("employee_login","successRegistration","Successfully
         // Registered..");
-        return new ModelAndView("result");
+        return new ModelAndView("employeeSucess");
     }
 
     private List<CustomerIdentfication> populateEmployeeIdentficationData(Employee employee, String cust_id) {

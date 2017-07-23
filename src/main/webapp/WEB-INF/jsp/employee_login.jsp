@@ -89,7 +89,7 @@
 <script>
 	document.onkeydown = function() {
 		if (window.event.keyCode == '13') {
-			validateAndLogin();
+			processEmpLogin();
 		}
 	}
 </script>

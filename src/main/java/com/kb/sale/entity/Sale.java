@@ -21,6 +21,7 @@ public class Sale {
 	private String sale_state;
 	private String sale_postal;
 	private String usage;
+	private String prop_type;
 	private String s_prop_area;
 	private Double sale_rent;
 	private Double sale_amount;
@@ -176,6 +177,14 @@ public class Sale {
 		this.addl_dtls = addl_dtls;
 	}
 
+	public String getProp_type() {
+		return prop_type;
+	}
+
+	public void setProp_type(String prop_type) {
+		this.prop_type = prop_type;
+	}
+
 	@Override
 	public String toString() {
 		return "Sale [sale_party=" + sale_party + ", agreement_type=" + agreement_type + ", sale_phone=" + sale_phone
@@ -185,5 +194,4 @@ public class Sale {
 				+ sale_amount + ", loan=" + loan + ", sale_referal=" + sale_referal + ", sa_status_flg=" + sa_status_flg
 				+ ", start_dt=" + start_dt + ", addl_dtls=" + addl_dtls + "]";
 	}
-
 }

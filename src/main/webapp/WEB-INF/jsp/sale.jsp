@@ -202,7 +202,21 @@
 										<form:errors path="s_prop_area" cssClass="error" />
 										<br />
 									</div>
-
+                                    <div
+										class="col-xm-12 col-sm-12 col-md-4 col-lg-4 property_section">
+										<form:label path="prop_type">
+											<spring:message code="prop_type" />
+										</form:label>
+										<form:select path="prop_type" id="prop_type" value="${prop_type.title}">
+										    <form:option value="" label="Select..." />
+											<form:option value="F">FLAT</form:option>
+											<form:option value="P">PLOT</form:option>
+											<form:option value="B">BUILDING WITH MULTIPLE PORTIONS</form:option>
+											<form:option value="O">OTHER</form:option>
+										</form:select>
+										<form:errors path="prop_type" cssClass="error" />
+										<br />
+									</div>
 
 								</div>
 								<div class="row address_section_row">

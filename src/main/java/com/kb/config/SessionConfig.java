@@ -17,6 +17,6 @@ public class SessionConfig extends WebMvcConfigurerAdapter {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        //registry.addInterceptor(sessionInterceptorAdapter);
+        registry.addInterceptor(sessionInterceptorAdapter);
     }
 }

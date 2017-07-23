@@ -21,8 +21,10 @@ public class SessionInterceptorAdapter extends HandlerInterceptorAdapter {
 
 		Object user = request.getSession().getAttribute("LOGGEDIN_USER");
 
-		if ((request.getRequestURI().equals("/login") 
-				|| request.getRequestURI().equals("/newcustomerRegistration") 
+		System.out.println(request.getRequestURI() +"------"+request.getMethod());
+		if ((request.getRequestURI().equals("/login")
+				|| request.getRequestURI().equals("/custlogin")
+				|| request.getRequestURI().equals("/newcustomerRegistration")
 				|| request.getRequestURI().equals("/newCustomerRegis")
 				|| request.getRequestURI().equals("/newEmpSubmit")
 				|| request.getRequestURI().equals("/emplogin")

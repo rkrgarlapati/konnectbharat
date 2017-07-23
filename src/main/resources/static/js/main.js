@@ -4,6 +4,7 @@ var rentalFormMandatoryFields = ["rental_party","rental_phone"];
 var saleFormMandatoryFields = ["sale_party","sale_phone"];
 var matriFormMandatoryFields = ["matri_party_name","matri_agreement_type","matri_phone"];
 var newEmpRegMandatoryFields = ["emp_firstName","emp_lastName","emp_userid","emp_password","emp_reenterpassword"];
+var custContactMandatoryFields = ["comments","communicationtype"];
 $(document).ready(function(){
 	 
 	 
@@ -21,6 +22,9 @@ $(document).ready(function(){
 		showErrIcon(1,value);
 		});
 	$.each(newEmpRegMandatoryFields, function( index, value ) {
+		showErrIcon(1,value);
+		});
+	$.each(custContactMandatoryFields, function( index, value ) {
 		showErrIcon(1,value);
 		});
 	
@@ -43,6 +47,35 @@ $(document).ready(function(){
 		enableDisableSubmit(2,this);
 		enableDisableSubmit(3,this);
 	});
+	
+	$('#comments').on('input', function() {
+		var input = $(this);
+		var span_id='showError'+ input.attr('id');
+		var x = '#'+span_id;
+				
+		if(input.val().trim().length >0){
+			$(input).removeClass("invalid").addClass("valid");	
+			if($(x).length >=1){
+				$(x).remove();
+			}
+		}
+		
+		showMandatoryIcon(this);
+	});
+	
+	
+	$( "#communicationtype" ).change(function() {
+
+		var input = $(this);
+		$(input).removeClass("invalid").addClass("valid");	
+		var span_id='showError'+ input.attr('id');
+		var x = '#'+span_id;
+		$(x).remove();
+		$(this).parent().find('.innerErrSpn').remove();
+	
+		});
+	
+
 	
 	
 	$('#first_name,#second_name,#area,#city,#state,#password,#reenterPassword').on('input', function() {
@@ -744,11 +777,65 @@ $("#aadharNumber").blur('input',function(){
 
 
 	function submitContactForm(event,actionUrl){
-		if($('#contactpopupflg').val()=='true'){
-//			$("#drilldownModel").modal('hide');
-			event.preventDefault();
-			submitFormFromEmpSearch(4,$('#elementId').val(),actionUrl);
+		
+		var form_data=custContactMandatoryFields;
+		var checkError=true;
+		var error_flag=false;	
+		for(var input in form_data){	
+			var checkElement=$("#"+custContactMandatoryFields[input]);
+			var x = $(checkElement).attr('id');
+			var span_id='showError'+x;
+			var y = '#'+span_id;
+		if(checkElement.hasClass('invalid')){
+			error_notPresent=false;	
+			error_flag=true;
+		}			
+		else 
+			{
+				if( checkElement.is('select') &&  $("option:selected", checkElement).val()=='' ){
+				
+				$("<span/>",{ 'id' : span_id}).addClass('error glyphicon glyphicon-warning-sign span-error').text(' Please select a valid value ').insertAfter(checkElement);	
+				
+				checkElement.removeClass("valid").addClass("invalid");	
+				error_free=false;
+				error_flag=true;
+				showErrIcon(1,x);
+				}
+				if(!checkElement.is('select') && checkElement.val()==0){
+			
+				$("<span/>",{ 'id' : span_id}).addClass('error glyphicon glyphicon-warning-sign span-error').text(' Field cannot be empty ').insertAfter(checkElement);	
+				
+				checkElement.removeClass("valid").addClass("invalid");	
+				error_free=false;
+				error_flag=true;
+				}	
+			}
+	}
+		
+		for(var input in form_data){	
+			var checkElement=$("#"+custContactMandatoryFields[input]);
+			if(checkElement.hasClass('invalid')){
+				checkError=false;	
+				error_flag=true;
+			}
 		}
+		if(error_flag){
+			if(!checkError){	
+//				alert("Please correct values of fields");	
+				$("#myModal").modal(); 
+				event.preventDefault();	
+			}
+		}
+		else{
+			if($('#contactpopupflg').val()=='true'){
+	            event.preventDefault();	
+	            submitFormFromEmpSearch(4,$('#elementId').val(),actionUrl);
+				}else{
+					//alert('submit');
+				}
+		}	
+		
+		
 	}
 	
 	function submitEmpRegistrationForm(event){

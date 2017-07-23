@@ -113,6 +113,7 @@ public class SaleController {
         ridgeSASale.setSa_id(sa_id);
         ridgeSASale.setUsage(sale.getUsage());
         ridgeSASale.setProperty_area(sale.getS_prop_area());
+        ridgeSASale.setProp_type(sale.getProp_type());
         ridgeSASale.setLoan(sale.getLoan());
         ridgeSASale.setAmount(sale.getSale_amount());
         ridgeSASale.setAddl_dtls(sale.getAddl_dtls());

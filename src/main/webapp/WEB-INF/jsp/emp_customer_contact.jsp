@@ -81,7 +81,7 @@
 					<form:select path="communicationtype" id="communicationtype"
 						class="form-control" value="${communicationtype.title}">
 						<form:option value="" label="Select..." />
-						<form:option value="M" label="Marketting" />
+						<form:option value="M" label="Marketing" />
 						<form:option value="C" label="Complaint" />
 						<form:option value="Q" label="Query" />
 						<form:option value="R" label="Rates" />
