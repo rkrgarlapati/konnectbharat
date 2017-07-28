@@ -8,11 +8,10 @@ import com.kb.newcustomerreg.entity.NewCustomer;
 import com.kb.newcustomerreg.exception.DuplicateCustIDException;
 import com.kb.newcustomerreg.repository.CustomerIdentificationRepository;
 import com.kb.newcustomerreg.repository.CustomerRegisterRepository;
-import com.kb.sms.HttpUrlPush;
+import com.kb.sms.SMSService;
 import com.kb.utility.GenerateUniqueID;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
@@ -20,8 +19,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.transaction.Transactional;
-import javax.validation.Valid;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -38,6 +35,9 @@ public class CustomerRegistrationController {
 
     @Autowired
     private RidgeAcctRepository ridgeAcctRepository;
+
+    @Autowired
+    private SMSService smsService;
 
     @RequestMapping(value = "/newcustomerRegistration", method = RequestMethod.GET)
     public ModelAndView newregisterPage(Model m) {
@@ -69,12 +69,14 @@ public class CustomerRegistrationController {
         try {
             custRegRepository.save(customer);
             custIdRepository.save(customerIdentificationList);
+            smsService.sendSMS("registration", newCustomer.getPhone(), newCustomer.getFirst_name()
+                    + " " + newCustomer.getSecond_name());
         } catch (Exception e) {
             e.printStackTrace();
         }
 
         /*try {
-            HttpUrlPush.message(newCustomer.getFirst_name() + " - Welcome to Konnect Bharat. Your account is registered.",
+            SMSService.message(newCustomer.getFirst_name() + " - Welcome to Konnect Bharat. Your account is registered.",
                     newCustomer.getPhone());
         } catch (IOException e) {
             e.printStackTrace();

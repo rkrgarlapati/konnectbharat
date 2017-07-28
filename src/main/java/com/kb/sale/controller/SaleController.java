@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
+import com.kb.sms.SMSService;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -38,6 +39,9 @@ public class SaleController {
     @Autowired
     private Sale sale;
 
+    @Autowired
+    private SMSService smsService;
+
     @RequestMapping(value = "/saleFormController", method = RequestMethod.GET)
     public ModelAndView newSalePage(@RequestParam(value = "type", required = true) String type) {
     	
@@ -62,7 +66,10 @@ public class SaleController {
         try{
         	String sa_id = GenerateUniqueID.INSTANCE.generateRandomNumber(8);
         	saveSaleData(sale, request,sa_id, "create");
-	        	        
+        	HttpSession session = request.getSession();
+            String loggedin_user = (String)session.getAttribute("LOGGEDIN_USER");
+            String loggedin_user_mobile = (String)session.getAttribute("LOGGEDIN_USER_MOBILE");
+            smsService.sendSMS(sale.getAgreement_type().toLowerCase(), loggedin_user_mobile, loggedin_user, sale.getSale_party(), sale.getSale_area());
         }catch(Exception ex){
         	sale.setAgreement_type(sale.getAgreement_type().toUpperCase());
         	request.setAttribute("errorMsg", "Error creating Agreement. Please contact Administrator.");

@@ -6,6 +6,7 @@ import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
+import com.kb.sms.SMSService;
 import org.apache.catalina.servlet4preview.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,7 +40,10 @@ public class MatrimonyController {
 	
 	@Autowired
 	private Matrimony matrimony;
-	
+
+	@Autowired
+	private SMSService smsService;
+
 	@RequestMapping(value = "/matrimonyFormController", method = RequestMethod.GET)
     public ModelAndView matrimonyForm(@RequestParam(value = "type", required = true) String type) {
         
@@ -60,8 +64,11 @@ public class MatrimonyController {
 		try{
 			String sa_id = GenerateUniqueID.INSTANCE.generateRandomNumber(8);
 			saveMatrimony(matrimony,request, sa_id, "create");
-			
-	 	}catch(Exception ex){
+			HttpSession session = request.getSession();
+			String loggedin_user = (String)session.getAttribute("LOGGEDIN_USER");
+			String loggedin_user_mobile = (String)session.getAttribute("LOGGEDIN_USER_MOBILE");
+			smsService.sendSMS(matrimony.getAgreement_type().toLowerCase(), loggedin_user_mobile, loggedin_user, matrimony.getMatri_party_name());
+		}catch(Exception ex){
 	 		ex.printStackTrace();
 	 		this.matrimony.setAgreement_type(matrimony.getAgreement_type().toUpperCase());
 	    	request.setAttribute("errorMsg", "Error creating Agreement. Please contact Administrator.");
